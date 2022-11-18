@@ -8,14 +8,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, defineAsyncComponent, onMounted } from 'vue'
+import { defineComponent, onMounted } from 'vue'
 import { GlobalStore } from "@/store/global";
 import { GetClassifies } from '@/library/global/Data'
 
 export default defineComponent({
-  components: {
-    Header: defineAsyncComponent(() => import('@/components/global/header/Header.vue'))
-  },
   setup() {
     const { SetWidth } = GlobalStore();
 

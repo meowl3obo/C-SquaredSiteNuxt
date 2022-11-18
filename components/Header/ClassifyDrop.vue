@@ -113,10 +113,9 @@
 </style>
 
 <script lang="ts">
-import { computed, defineComponent, Ref, toRefs } from 'vue'
+import { Ref } from 'vue'
 import { ProductStore } from "@/store/product";
 import { GlobalStore } from "@/store/global";
-import { useRouter } from 'vue-router'
 
 export default defineComponent({
   props: {

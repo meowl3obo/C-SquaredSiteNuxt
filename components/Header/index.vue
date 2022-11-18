@@ -133,8 +133,6 @@ header {
 </style>
 
 <script lang="ts">
-import { defineComponent, defineAsyncComponent, onMounted, ref, computed } from "vue";
-import { useRouter } from 'vue-router'
 import { GlobalStore } from "@/store/global";
 
 export default defineComponent({

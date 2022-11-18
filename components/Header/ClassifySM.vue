@@ -42,7 +42,6 @@
 </style>
 
 <script lang="ts">
-import { defineComponent, defineAsyncComponent, ref, computed } from 'vue'
 import { GlobalStore } from "@/store/global";
 
 export default defineComponent({

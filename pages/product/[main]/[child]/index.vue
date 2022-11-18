@@ -22,8 +22,6 @@
 </style>
 
 <script lang="ts">
-import { computed, defineComponent, onMounted, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
 import { GetProductList } from '@/apis/Product'
 import { IGetProductsQuery, IProductIntro } from '@/types/product/Product'
 

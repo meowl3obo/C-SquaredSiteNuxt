@@ -27,18 +27,13 @@
 </style>
 
 <script lang="ts">
-import { computed, defineComponent, onMounted, ref, watch } from 'vue'
-// import { useStore } from 'vuex'
-import { useRoute } from 'vue-router'
 import { IParentClassify } from "@/types/product/Classify";
 
 export default defineComponent({
   setup() {
     const route = useRoute()
-    // const store = useStore()
-    // const classifies = computed(() => store.getters["Product/GetClassify"] as Array<IParentClassify>);
-    const classifies = ref<Array<IParentClassify>>([])
     const params = computed(() => route.params)
+    const classifies = ref<Array<IParentClassify>>([])
     const parentID = ref<string>("")
     const childID = ref<string>("")
     const parentName = computed(() => classifies.value.find((x) => x.Id.toString() == parentID.value)?.Name as string)

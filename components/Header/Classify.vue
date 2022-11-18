@@ -86,9 +86,7 @@
 </style>
 
 <script lang="ts">
-import { computed, defineComponent, ref } from 'vue'
 import { ProductStore } from "@/store/product";
-import { useRouter } from 'vue-router'
 import { IChildClassify } from "@/types/product/Classify";
 
 export default defineComponent({
