@@ -1,0 +1,28 @@
+body {
+  margin: unset;
+  background-color: var(--bg-color);
+  color: var(--main-font);
+  height: 5000px;
+}
+
+@mixin pc {
+  @media screen and (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+:root {
+  --bg-color: #f7f7f2;
+  --bg-color-20: #f7f7f220;
+  --main-font: #4A4537;
+  --reverse-font: #f7f7f2;
+  --drop-40: #d8d8d840;
+  --drop-60: #d8d8d860;
+  --drop-hover: #6e6e6a40;
+}

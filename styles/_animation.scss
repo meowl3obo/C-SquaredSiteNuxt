@@ -1,0 +1,47 @@
+.ease_top_bottom-enter-active {
+  animation: ease_top_bottom-control 0.5s ease-in-out;
+}
+.ease_top_bottom-leave-active {
+  animation: ease_top_bottom-control 0.5s ease-in-out reverse;
+}
+@keyframes ease_top_bottom-control {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  20% {
+    opacity: 0;
+    transform: translateY(95%);
+  }
+  80% {
+    opacity: .95;
+    transform: translateY(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ease_drop-enter-active{
+  animation: ease_drop_top_bottom-control 0.2s ease-out;
+}
+.ease_drop-leave-active{
+  animation: ease_drop_top_bottom-control 0.2s ease-out reverse;
+}
+@keyframes ease_drop_top_bottom-control {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  80% {
+    opacity: .95;
+  }
+  100% {
+    opacity: 1;
+    max-height: 250px;
+  }
+}
