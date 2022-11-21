@@ -121,7 +121,7 @@ export default defineComponent({
   props: {
     IsOpen: Boolean
   },
-  setup(props) {
+  setup(props, { emit }) {
     const isOpen = toRefs(props).IsOpen as Ref<boolean>
     const { GetClassify } = ProductStore()
     const { GetWidth } = GlobalStore()
@@ -130,6 +130,7 @@ export default defineComponent({
     const classifies = computed(() => GetClassify());
     
     const toPath = (path: string) => {
+      emit("close")
       router.push(path)
     }
 

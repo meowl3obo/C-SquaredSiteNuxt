@@ -8,13 +8,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
 import { GlobalStore } from "@/store/global";
 import { GetClassifies } from '@/library/global/Data'
 
 export default defineComponent({
   setup() {
+    const route = useRoute()
     const { SetWidth } = GlobalStore();
+    const path = computed(() => route.fullPath)
 
     onMounted(() => {
       window.addEventListener("resize", windowWidth);
@@ -25,6 +26,13 @@ export default defineComponent({
       const width = window.innerWidth
       SetWidth(width)
     }
+
+    watch(
+      () => path.value,
+      () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      }
+    )
 
     GetClassifies()
   },

@@ -22,7 +22,7 @@
       <transition name="ease_top_bottom">
         <Classify v-show="!isScrollToBottom && width > 1024" />
       </transition>
-      <ClassifyDrop :IsOpen="isShowClassifyDrop" />
+      <ClassifyDrop :IsOpen="isShowClassifyDrop" @close="isShowClassifyDrop = false" />
     </div>
   </header>
 </template>
@@ -59,6 +59,7 @@ header {
   width: calc(100% - 40px);
   top: 0;
   padding: 20px;
+  z-index: 100;
   transition: height 0.2s ease-out;
 
   .header {

@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: auto;
+}
+
 body {
   margin: unset;
   background-color: var(--bg-color);
@@ -20,8 +24,10 @@ body {
 :root {
   --bg-color: #f7f7f2;
   --bg-color-20: #f7f7f220;
+  --bg-color-40: #f7f7f240;
   --main-font: #4A4537;
   --reverse-font: #f7f7f2;
+  --content-font: #121212;
   --drop-40: #d8d8d840;
   --drop-60: #d8d8d860;
   --drop-hover: #6e6e6a40;
