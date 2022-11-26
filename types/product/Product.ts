@@ -11,21 +11,22 @@ export interface IProductIntro {
   Status: number
 }
 
-export interface IProduct {
-  Id?: string
-  Name: string
-  Intro: string
+export interface IProduct extends IProductIntro{
   Illustrate: string
-  ParentClassify: string
-  ChildClassify: string
-  Price: number
-  Color: string
-  Size: number
-  Unit: string
-  PreOrderAmount: number
-  NowAmount: number
+  OtherImgs: Array<string>
+  Inventorys: Array<IInventory>
 }
 
 export interface IGetProductsQuery {
   child?: string
+}
+
+export interface IInventory {
+  Color: string
+  Id: string
+  NowAmount: number
+  PreOrderAmount: number
+  ProductId: string
+  Size: number
+  Unit: string
 }

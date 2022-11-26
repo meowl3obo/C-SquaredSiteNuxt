@@ -41,7 +41,6 @@ export default defineComponent({
     };
 
     const getData = async () => {
-      console.log(data);
       const query = { data: data.value };
       const response = await useFetch("/api/test", {
         method: "GET",

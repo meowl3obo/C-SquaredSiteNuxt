@@ -6,8 +6,8 @@
       <span @mouseenter="parentHover('')">New</span>
       <span>|</span>
       <template v-for="(item, index) in classifies" :key="item.Id">
-        <span @mouseenter="(e) => {parentHover(item.Id, e)}">
-          <a :href="`/product/${item.Id}`" @click.prevent="toPath(`/product/${item.Id}`)">{{ item.Name }}</a>
+        <span @mouseenter="(e) => {parentHover(item.Id, e)}" @click="toPath(`/product/${item.Id}`)">
+          <a :href="`/product/${item.Id}`" @click.prevent>{{ item.Name }}</a>
         </span>
         <span v-if="index+1 < classifies.length">
           |
@@ -16,8 +16,8 @@
     </div>
     <div class="child-classifies" :class="isOpen ? 'm-open-classies' : 'm-close-classies'"> 
       <div class="content" :style="`left: ${childLeft}px`">
-        <div v-for="item in childClassify" :key="item.Id" class="child-classify">
-          <a :href="`/product/${parentID}/${item.Id}`" @click.prevent="toPath(`/product/${parentID}/${item.Id}`)">{{ item.Name }}</a>
+        <div v-for="item in childClassify" :key="item.Id" class="child-classify" @click="toPath(`/product/${parentID}/${item.Id}`)">
+          <a :href="`/product/${parentID}/${item.Id}`" @click.prevent>{{ item.Name }}</a>
         </div>
       </div>
     </div>

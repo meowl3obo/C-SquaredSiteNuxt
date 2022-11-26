@@ -6,7 +6,7 @@ body {
   margin: unset;
   background-color: var(--bg-color);
   color: var(--main-font);
-  height: 5000px;
+  // height: 5000px;
 }
 
 @mixin pc {
@@ -31,4 +31,5 @@ body {
   --drop-40: #d8d8d840;
   --drop-60: #d8d8d860;
   --drop-hover: #6e6e6a40;
+  --focus-border: #80808080;
 }

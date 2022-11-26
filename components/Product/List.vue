@@ -1,21 +1,22 @@
 <template>
   <div class="product-list">
     <div v-for="item in productList" :key="item.Id" class="product">
-      <div class="img-div" :class="`path-${random()}`" @mouseenter="productImgMap.set(item.Id, true)" @mouseleave="productImgMap.set(item.Id, false)">
-        <img :src="`${imgBaseUrl}${item.MainImg}`">
-        <transition name="ease_show">
-          <div v-show="productImgMap.get(item.Id)" class="img-back"></div>
-        </transition>
-      </div>
-      <div class="intro">
-        <div>
-          <span>{{ item.Name }}</span>
+      <a :href="`/product/${item.ParentClassify}/${item.ChildClassify}/${item.Id}`">
+        <div class="img-div" :class="`path-${random()}`" @mouseenter="productImgMap.set(item.Id, true)" @mouseleave="productImgMap.set(item.Id, false)">
+          <img :src="`${imgBaseUrl}${item.MainImg}`">
+          <transition name="ease_show">
+            <div v-show="productImgMap.get(item.Id)" class="img-back"></div>
+          </transition>
         </div>
-        <div>
-          <span>TWD {{ item.Price }}</span>
+        <div class="intro">
+          <div>
+            <span>{{ item.Name }}</span>
+          </div>
+          <div>
+            <span>TWD {{ item.Price }}</span>
+          </div>
         </div>
-      </div>
-      <!-- {{ item }} -->
+      </a>
     </div>
     <template v-if="productList.length < 4 && productList.length > 1">
       <div v-for="index in (4 - productList.length)" :key="index" class="product"/>
@@ -48,6 +49,10 @@
   text-align: center;
   max-width: 300px;
 
+  a {
+    text-decoration: unset;
+  }
+
   .img-div {
     position: relative;
     img {
@@ -65,6 +70,10 @@
     padding-block: 10px;
     font-weight: bold;
     color: var(--content-font);
+    &:hover {
+      text-decoration: underline;
+    }
+
     & > div {
       padding-block: 3px;
     }
@@ -89,7 +98,6 @@ export default defineComponent({
     const setID = () => {
       parentID.value = params.value['main'] ? params.value['main'] as string : ''
       childID.value = params.value['child'] ? params.value['child'] as string : ''
-      console.log(parentID.value, childID.value)
     }
 
     const getProductList = async () => {
